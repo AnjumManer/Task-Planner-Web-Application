@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Management System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E0AED0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select {
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Client Management System</h1>
+    </header>
+
+    <div class="container">
+       
+        <section id="client-management">
+            <h2>Create and Manage Clients</h2>
+            <form id="client-form">
+                <label for="clientName">Client Name:</label>
+                <input type="text" id="clientName" required>
+
+                <label for="projectName">Project Name:</label>
+                <input type="text" id="projectName" required>
+
+                <button type="button" onclick="addClient()">Add Client</button>
+            </form>
+        </section>
+
+        
+        <section id="client-list">
+            <h2>Client List</h2>
+            <ul id="clients"></ul>
+        </section>
+    </div>
+
+    <script>
+        function addClient() {
+           
+            const clientName = document.getElementById('clientName').value;
+            const projectName = document.getElementById('projectName').value;
+
+            
+            const clientList = document.getElementById('clients');
+            const listItem = document.createElement('li');
+            listItem.textContent = `Client: ${clientName}, Project: ${projectName}`;
+            clientList.appendChild(listItem);
+
+            
+            document.getElementById('clientName').value = '';
+            document.getElementById('projectName').value = '';
+        }
+    </script>
+</body>
+</html>

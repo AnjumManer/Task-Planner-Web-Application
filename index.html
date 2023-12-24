@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Task Planner</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #5F0F40; 
+            color: #333;
+            overflow: hidden; 
+        }
+
+        header {
+            background-color: #092635;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        .welcome-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #E36414;
+            font-size: 36px;
+            margin: 0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #e8491d;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #333;
+        }
+
+        .myntra-style {
+            background-color: #e8491d;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            display: inline-block;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .myntra-style:hover {
+            background-color: #333;
+        }
+        #para{
+            font-size: 35px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #30b4ce;
+            text-align: center;
+            font-weight: bold;
+        }
+     
+
+#para {
+  text-align: right;
+
+  /* animation properties */
+  -moz-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  
+  -moz-animation: my-animation 15s linear infinite;
+  -webkit-animation: my-animation 15s linear infinite;
+  animation: my-animation 15s linear infinite;
+}
+
+
+
+
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(-100%); }
+  to { -webkit-transform: translateX(100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  to {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
+        a{
+            margin-left:80px;
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to <span style="display: inline-block;" class="animated-text">Task Planner</span></h1>
+    </header>
+
+    <div class="welcome-container">
+        <h2>Your All-in-One Task Management Solution</h2>
+        <p>
+            Task Planner is a powerful and intuitive software designed to help you manage projects,
+            tasks, and teams efficiently. With features like user management, client management,
+            project tracking, and more, you can streamline your workflow and boost productivity.
+        </p>
+        <p>
+            <i>Ready to get started? </i>
+        </p>
+    </div>
+    <div>
+        <p id="para">This are Our Services</p>
+        <a href="user-management.html" class="myntra-style">User Management</a>.
+        <a href="client-management.html" class="myntra-style">Client Management</a>.
+        <a href="project-management.html" class="myntra-style">Project Management</a>.
+        <a href="task-creation-assignment.html" class="myntra-style">Task Creation and Assignment</a>.
+       
+    </div> 
+</body>
+</html>
+
+
+
+
+
+
+

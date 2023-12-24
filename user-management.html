@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #9EC8B9;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select, button {
+            margin-bottom: 16px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #user-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .user-item {
+            margin: 10px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .user-role {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>User Management System</h1>
+    </header>
+
+    <div class="container">
+        <form id="user-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+
+            <label for="role">Role:</label>
+            <select id="role" required>
+                <option value="developer">Developer</option>
+                <option value="tester">Tester</option>
+                <option value="trainer">Trainer</option>
+                <option value="manager">Manager</option>
+                <option value="worker">Worker</option>
+                <option value="decorator">Decorator</option>
+            </select>
+
+            <button type="button" onclick="addUser()">Add User</button>
+        </form>
+
+        <ul id="user-list"></ul>
+    </div>
+
+    <script>
+        function addUser() {
+            const username = document.getElementById('username').value;
+            const role = document.getElementById('role').value;
+
+            const userItem = document.createElement('li');
+            userItem.className = 'user-item';
+
+            const roleElement = document.createElement('div');
+            roleElement.className = 'user-role';
+            roleElement.textContent = `Role: ${role}`;
+
+            userItem.textContent = `Username: ${username}`;
+            userItem.appendChild(roleElement);
+
+            document.getElementById('user-list').appendChild(userItem);
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .project-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            color: #555;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2184b4;
+        }
+
+        .project-list {
+            margin-top: 20px;
+        }
+
+        .project-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .project-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Project Management System</h1>
+    </header>
+
+    <div class="container">
+      
+        <section id="project-management">
+            <h2>Project Management</h2>
+            
+            <div class="project-form">
+                <label for="clientName">Client:</label>
+                <input type="text" id="clientName" placeholder="Enter client name">
+
+                <label for="projectName">Project Name:</label>
+                <input type="text" id="projectName" placeholder="Enter project name">
+
+                <label for="projectManager">Project Manager:</label>
+                <input type="text" id="projectManager" placeholder="Enter project manager">
+
+                <label for="deadline">Deadline:</label>
+                <input type="date" id="deadline">
+
+                <button onclick="addProject()">Add Project</button>
+            </div>
+
+            <div class="project-list">
+                
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function addProject() {
+            const clientName = document.getElementById("clientName").value;
+            const projectName = document.getElementById("projectName").value;
+            const projectManager = document.getElementById("projectManager").value;
+            const deadline = document.getElementById("deadline").value;
+
+            if (clientName && projectName && projectManager && deadline) {
+                const projectList = document.querySelector(".project-list");
+
+                const projectItem = document.createElement("div");
+                projectItem.classList.add("project-item");
+                projectItem.innerHTML = `
+                    <span><strong>Client:</strong> ${clientName}</span>
+                    <span><strong>Project:</strong> ${projectName}</span>
+                    <span><strong>Manager:</strong> ${projectManager}</span>
+                    <span><strong>Deadline:</strong> ${deadline}</span>
+                `;
+
+                projectList.appendChild(projectItem);
+
+               
+                document.getElementById("clientName").value = "";
+                document.getElementById("projectName").value = "";
+                document.getElementById("projectManager").value = "";
+                document.getElementById("deadline").value = "";
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        section {
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select, button {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            margin-top: 5px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Task Management</h1>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Create a New Task</h2>
+            <form id="taskForm">
+                <label for="taskName">Task Name:</label>
+                <input type="text" id="taskName" required>
+
+                <label for="assignee">Assignee:</label>
+                <select id="assignee" required>
+                    <option value="developer">Developer</option>
+                    <option value="tester">Tester</option>
+                    <option value="manager">Manager</option>
+                  
+
+                </select>
+
+                <label for="priority">Priority:</label>
+                <select id="priority" required>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+
+                <label for="dependencies">Dependencies:</label>
+                <input type="text" id="dependencies">
+
+                <button type="button" onclick="createTask()">Create Task</button>
+            </form>
+        </section>
+
+
+    </div>
+
+    <script>
+        function createTask() {
+           
+            alert('Task created successfully!');
+        }
+    </script>
+</body>
+</html>
